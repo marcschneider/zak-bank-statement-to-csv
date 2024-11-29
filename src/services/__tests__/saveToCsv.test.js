@@ -17,7 +17,7 @@ describe('saveToCsv', () => {
     mockWriteFile.mockClear()
   })
 
-  it('should save transactions to CSV file', async () => {
+  it('should save transactions to CSV file', async() => {
     const transactions = [mockTransaction]
     const outputPath = 'test.csv'
 
@@ -34,7 +34,7 @@ describe('saveToCsv', () => {
     expect(csvContent).toContain(expectedRow)
   })
 
-  it('should handle empty transactions array', async () => {
+  it('should handle empty transactions array', async() => {
     const transactions = []
     const outputPath = 'test.csv'
 

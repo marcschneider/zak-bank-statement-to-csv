@@ -35,7 +35,7 @@ describe('assembleTransactions', () => {
     mockParsePdf.mockResolvedValue([mockTransaction])
   })
 
-  it('should process PDF files and return sorted transactions', async () => {
+  it('should process PDF files and return sorted transactions', async() => {
     const transactions = await assembleTransactions('input')
     
     expect(mockReaddir).toHaveBeenCalledWith('input')
@@ -44,7 +44,7 @@ describe('assembleTransactions', () => {
     expect(transactions[0].date).toBe(mockTransaction.date)
   })
 
-  it('should handle PDF processing errors', async () => {
+  it('should handle PDF processing errors', async() => {
     mockParsePdf.mockRejectedValue(new Error('PDF processing failed'))
     mockReaddir.mockResolvedValue(['test1.pdf']) // Only one file to simplify test
 
@@ -53,7 +53,7 @@ describe('assembleTransactions', () => {
       .toThrow('Failed to process transactions: No transactions were successfully processed')
   })
 
-  it('should throw error if no PDF files found', async () => {
+  it('should throw error if no PDF files found', async() => {
     mockReaddir.mockResolvedValue(['notapdf.txt'])
     
     await expect(assembleTransactions('input'))
@@ -61,7 +61,7 @@ describe('assembleTransactions', () => {
       .toThrow('No PDF files found in input')
   })
 
-  it('should throw error if directory does not exist', async () => {
+  it('should throw error if directory does not exist', async() => {
     mockAccess.mockRejectedValue(new Error('Directory not found'))
     
     await expect(assembleTransactions('invalid'))
