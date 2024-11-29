@@ -41,18 +41,18 @@ const INCOMING_AMOUNT_X_THRESHOLD = 26
  * @param {string} date - Initial date for the transaction
  * @returns {Transaction}
  */
-function createEmptyTransaction(date) {
-  return {
-    date,
-    title: null,
-    description: [],
-    valuta: null,
-    amount: null,
-    type: null,
-    balance: null,
-    time: null
-  }
-}
+// function createEmptyTransaction(date) {
+//   return {
+//     date,
+//     title: null,
+//     description: [],
+//     valuta: null,
+//     amount: null,
+//     type: null,
+//     balance: null,
+//     time: null
+//   }
+// }
 
 export async function parsePdf(filePath) {
   const pdfBuffer = await fs.readFile(filePath)

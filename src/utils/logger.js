@@ -25,18 +25,18 @@ export function logger(level, ...args) {
   const prefix = `[${timestamp}] [${level.toUpperCase()}]`
 
   switch (level) {
-    case LogLevel.ERROR:
-      console.error(prefix, ...args)
-      break
-    case LogLevel.WARN:
-      console.warn(prefix, ...args)
-      break
-    case LogLevel.INFO:
-      console.info(prefix, ...args)
-      break
-    case LogLevel.DEBUG:
-    default:
-      console.log(prefix, ...args)
+  case LogLevel.ERROR:
+    console.error(prefix, ...args)
+    break
+  case LogLevel.WARN:
+    console.warn(prefix, ...args)
+    break
+  case LogLevel.INFO:
+    console.info(prefix, ...args)
+    break
+  case LogLevel.DEBUG:
+  default:
+    console.log(prefix, ...args)
   }
 }
 

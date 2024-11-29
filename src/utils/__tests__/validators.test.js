@@ -16,7 +16,7 @@ describe('isDate', () => {
 describe('isAmount', () => {
   it('should validate correct amount format', () => {
     expect(isAmount('1234.56')).toBe(true)
-    expect(isAmount("1'234.56")).toBe(true)
+    expect(isAmount('1\'234.56')).toBe(true)
   })
 
   it('should reject invalid amount formats', () => {
